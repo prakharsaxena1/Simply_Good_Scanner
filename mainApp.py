@@ -1,4 +1,4 @@
-# # Simply Good Scanner (SGS)
+# Simply Good Scanner (SGS)
 import tkinter as tk
 from tkinter import ttk
 from tkinter.filedialog import askopenfilename
@@ -38,14 +38,7 @@ def work(num):
 def startFunction():
     value = clicked.get()
     if value == "Select Source":
-        messagebox.showerror("Source Error",
-                             "Select a source before clicking start you fool")
-    elif value == "Image file":
-        filePath = askopenfilename()
-        img = cv2.imread(filePath)
-        cv2.imshow('Simply good scanner', img)
-        if cv2.waitKey(20) & 0xFF == ord('d'):
-            cv2.destroyAllWindows()
+        messagebox.showerror("Source Error", "Select a source before clicking start you fool")
     elif value == "External Camera":
         work(1)
     elif value == "Laptop Camera":
@@ -96,7 +89,7 @@ ttk.Label(root, text='Source', font=("Comic Sans MS", 20)).place(x=80, y=110)
 
 # Options
 
-options = ["Select Source", "Laptop Camera", "External Camera", "Image file"]
+options = ["Select Source", "Laptop Camera", "External Camera"]
 clicked = tk.StringVar(value=options[0])
 
 # Create Dropdown menu
